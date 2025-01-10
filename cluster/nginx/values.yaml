@@ -1,0 +1,42 @@
+#nginx.yuvallab.xyz
+service:
+  type: ClusterIP
+  port: 80
+  targetPort:
+    http: 8080
+    https: 8443
+
+containerPort: 8080
+
+securityContext:
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
+
+serverBlock: |
+  server {
+      listen 8080;
+      server_name nginx.yuvallab.xyz;
+
+      root /var/www/html;
+      index index.html;
+  }
+replicaCount: 2
+extraVolumeMounts:
+  - name: www-data
+    mountPath: /var/www/html
+
+initContainers:
+  - name: setup-content
+    image: busybox
+    command:
+      - sh
+      - -c
+      - "echo '<h1>Welcome to NGINX!</h1>' > /var/www/html/index.html"
+    volumeMounts:
+      - name: www-data
+        mountPath: /var/www/html
+
+extraVolumes:
+  - name: www-data
+    emptyDir: {}

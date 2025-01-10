@@ -1,0 +1,35 @@
+helmDefaults:
+  timeout: 600
+  wait: true
+  createNamespace: true
+
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+  - name: my_charts_repo
+    url: http://localhost:8080
+#not nedded in this case left as bad example
+environments:
+  DEV:
+    values:
+      - DEV/nginx-values.yaml
+      - DEV/mychart-values.yaml
+  PROD:
+    values:
+      - PROD/nginx-values.yaml
+      - PROD/mychart-values.yaml
+---
+releases:
+  - name: nginx
+    namespace: nginx
+    chart: bitnami/nginx
+    version: 18.3.2
+    values:
+      - {{ .Environment.Name }}/nginx-values.yaml
+
+  - name: mychart
+    namespace: yuval-skillup
+    chart: my_charts_repo/mychart
+    version: 0.1.2
+    values:
+      - {{ .Environment.Name }}/mychart-values.yaml

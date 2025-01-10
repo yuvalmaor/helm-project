@@ -1,0 +1,29 @@
+{{- if .Values.frontendIngress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.frontendIngress.name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/cors-allow-origin: "{{ .Values.frontendIngress.annotations.corsAllowOrigin }}"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "{{ .Values.frontendIngress.annotations.corsAllowMethods }}"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "{{ .Values.frontendIngress.annotations.corsAllowHeaders }}"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "{{ .Values.frontendIngress.annotations.corsAllowCredentials }}"
+spec:
+  ingressClassName: {{ .Values.frontendIngress.ingressClassName }}
+  tls:
+    - hosts:
+        - {{ .Values.frontendIngress.host }}
+      secretName: {{ .Values.frontendIngress.tlsSecretName }}
+  rules:
+    - host: {{ .Values.frontendIngress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.frontendIngress.serviceName }}
+                port:
+                  number: {{ .Values.frontendIngress.servicePort }}
+{{- end }}

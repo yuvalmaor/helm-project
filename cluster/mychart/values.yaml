@@ -1,0 +1,109 @@
+# Default values for mychart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+replicaCount: 1
+
+tls:
+  name: "app-tls-secret"
+  crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURnakNDQXdtZ0F3SUJBZ0lTQk5iVzI3UnJpb2ZjeTJORmg5TC9ia1VNTUFvR0NDcUdTTTQ5QkFNRE1ESXgKQ3pBSkJnTlZCQVlUQWxWVE1SWXdGQVlEVlFRS0V3MU1aWFFuY3lCRmJtTnllWEIwTVFzd0NRWURWUVFERXdKRgpOakFlRncweU5UQXhNRGN4TURJeE1UVmFGdzB5TlRBME1EY3hNREl4TVRSYU1Cd3hHakFZQmdOVkJBTVRFV2hsCmJHMHVlWFYyWVd4c1lXSXVlSGw2TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFL285T0pUTXkKSTRrZmpidVdGM1lIMmMvRDJwWXZiUzA3OWtFQWhQL25LaUpoSnJuRVlseWFURDd5QUdEd2paLzR0dEo5SzFXYgpOdVE3NmFScDdvaHBNS09DQWhNd2dnSVBNQTRHQTFVZER3RUIvd1FFQXdJSGdEQWRCZ05WSFNVRUZqQVVCZ2dyCkJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWURWUjBUQVFIL0JBSXdBREFkQmdOVkhRNEVGZ1FVUEgyaG9EYlEKbnZ1RXdmMTIydHRKZTFITUREZ3dId1lEVlIwakJCZ3dGb0FVa3lkR21BT3BVV2lPbU5iRVFramJJNzlZbE5JdwpWUVlJS3dZQkJRVUhBUUVFU1RCSE1DRUdDQ3NHQVFVRkJ6QUJoaFZvZEhSd09pOHZaVFl1Ynk1c1pXNWpjaTV2CmNtY3dJZ1lJS3dZQkJRVUhNQUtHRm1oMGRIQTZMeTlsTmk1cExteGxibU55TG05eVp5OHdIQVlEVlIwUkJCVXcKRTRJUmFHVnNiUzU1ZFhaaGJHeGhZaTU0ZVhvd0V3WURWUjBnQkF3d0NqQUlCZ1puZ1F3QkFnRXdnZ0VFQmdvcgpCZ0VFQWRaNUFnUUNCSUgxQklIeUFQQUFkZ0RNK3c5cWhYRUpaZjZWbTFQTzZiSjhJdW1GWEEyWGpiYXBmbFRBCi9rd05zQUFBQVpSQWZmdVJBQUFFQXdCSE1FVUNJUUNseisxMHRLd21CQm54OWRJYlJZYjRqbWh3NkVnRGNCVHUKOFdhRDlTWHlOUUlnRWo5WEFLRFc1NjlMZHp4RnJQeTdlcmRtTitqT0ROWlFWV29kMGpzZzZuRUFkZ0Rna3JQOApEQjNJNTJnMkg5NWh1WlpOQ2xKNEdZcHkxbkxFc0UybGJXOVVCQUFBQVpSQWZmekdBQUFFQXdCSE1FVUNJR1NICmdxWWdNSUZnUGF2em9LUVhUcjhCbGpVMWx1VlFQcDc1UHdENGQ4a1pBaUVBK1c0T1R0UVVMZGdDaWltY1pVVC8KNCt6YXRLZCs3d2hXNE55SjZ4azgrQnN3Q2dZSUtvWkl6ajBFQXdNRFp3QXdaQUl3WTk2QzhkdDl5TEJoM3VRYQpVSWgxbU5MdHdHelRTUnBzN1JJaUNPWDFndWVJYTNEeFNTTklQaXAvTkhxejBLZEtBakJTZE4xZEREOEVmTFpBCmJlMnhkanBPRmlTZDZKeWJKdkJZQW9LZ3pvZ3d2OFVabzNMSnJZeDhQK0tqQlVRQ2pFST0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRVZ6Q0NBaitnQXdJQkFnSVJBTEJYUHBGemx5ZHcyN1NIeXpwRkt6Z3dEUVlKS29aSWh2Y05BUUVMQlFBdwpUekVMTUFrR0ExVUVCaE1DVlZNeEtUQW5CZ05WQkFvVElFbHVkR1Z5Ym1WMElGTmxZM1Z5YVhSNUlGSmxjMlZoCmNtTm9JRWR5YjNWd01SVXdFd1lEVlFRREV3eEpVMUpISUZKdmIzUWdXREV3SGhjTk1qUXdNekV6TURBd01EQXcKV2hjTk1qY3dNekV5TWpNMU9UVTVXakF5TVFzd0NRWURWUVFHRXdKVlV6RVdNQlFHQTFVRUNoTU5UR1YwSjNNZwpSVzVqY25sd2RERUxNQWtHQTFVRUF4TUNSVFl3ZGpBUUJnY3Foa2pPUFFJQkJnVXJnUVFBSWdOaUFBVFo4WjVHCmgvZ2hjV0NvSnV1aitybnEyaDI1RXFmVUp0bFJGTEZoZkhXV3Z5SUxPUi9WdnRFS1Jxb3RQRW9KaEM2K1FKVlYKNlJsQU4yWjE3VEpPZHdSSitIQjd3eGpuenZkeEVQNnNkTmdBMU8xdEhITVdNeENjT3JMcWJHTDB2YmlqZ2ZndwpnZlV3RGdZRFZSMFBBUUgvQkFRREFnR0dNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNECkFUQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlNUSjBhWUE2bFJhSTZZMXNSQ1NOc2oKdjFpVTBqQWZCZ05WSFNNRUdEQVdnQlI1dEZubWU3Ymw1QUZ6Z0FpSXlCcFk5dW1iYmpBeUJnZ3JCZ0VGQlFjQgpBUVFtTUNRd0lnWUlLd1lCQlFVSE1BS0dGbWgwZEhBNkx5OTRNUzVwTG14bGJtTnlMbTl5Wnk4d0V3WURWUjBnCkJBd3dDakFJQmdabmdRd0JBZ0V3SndZRFZSMGZCQ0F3SGpBY29CcWdHSVlXYUhSMGNEb3ZMM2d4TG1NdWJHVnUKWTNJdWIzSm5MekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBZ0VBZll0N1NpQTFzZ1dHQ0lwdW5rNDZyNEFFeElSYwpNeGtLZ1VoTmxycnYxQjIxaE9hWE4vNW1pRStMT1RicmNtVS9NOXl2QzZNVlk3MzBHTkZvTDhJaEo4ajh2ck9MCnBNWTIyT1A2YmFTMWs5WU1ydERUbHdKSG9HYnkwNFRoVFVlQkRrc1M5Uml1SHZpY1pxQmVkUWRJRjY1cFp1aHAKZURjR0JjTGlZYXNRci9FTzVneHh0THlUbWdzSFNPVlNCY0ZPbjlsZ3Y3TEVDUHE5aTdtZkgzbXB4Z3JSS1N4SApwT29aMEtYTWNCK2hIdXZsa2xIbnR2Y0kwbU1NUTBtaFlqNnF0TUZTdGtGMVJwQ0czSVBkSXdwVkNRcXU4R1Y3CnM4dWJrblJ6cyszQy9CbTE5UkZPb2lQcERrd3Z5TmZ2bVExNFhreXFxS0s1b1o4emhEMzJrRlJRa3hhOHVaU3UKaDRhVEltRnhrbnUzOXdhQnhJUlhFNGpLeGxBbVFjNFFqRlpvcTFLbVFxUWcwSi8xSkY4UmxGdkphczFWY2pMdgpZbHZVQjJ0Nm5wTzZvUWpCM2wrUE5mMERwUUg3aVV4M1d6NUFqUUNpNkwyNUZqeUUwNnE2QlovUWxtdFlkbC84ClpZYW80U1JxUEVzLzZjQWlGK1FmNXpnMlVrYVd0RHBobDFMS011VE5Mb3R2c1g5OUhQNjlWMmZhTnllZ29kUTAKTHlUQXByL3ZUMDFZUEU0NnZOc0RMZ0srNGNMNlRyekMvYTRXY21GNVNSSjkzOHpydi9kdUpITFhRSWt1NXYwKwpFd095NTlIZG0wUFQvRXIvODRkRFYwQ1NqZFIvMlh1Wk0za3B5c1NLTGdEMWNLaURBK0lSZ3VPREN4Zk85Y3lZCklnNDZ2OW1GbUJ2eUgwND0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR0hBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJHMHdhd0lCQVFRZ3Fnb0FUQVN1VUkxMy9QSUIKT285ZkhwNUd6MXlXeGlYclRUUW5lSlFiNXV1aFJBTkNBQVQrajA0bE16SWppUitOdTVZWGRnZlp6OFBhbGk5dApMVHYyUVFDRS8rY3FJbUVtdWNSaVhKcE1QdklBWVBDTm4vaTIwbjByVlpzMjVEdnBwR251aUdrdwotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==
+
+jwtSecret:
+  name: "jwt-secret"
+  value: MmRyYldDa0k3Rm8yYWVpYm85S2c2R3BsTXFTVGdpSk5zSDJQcmo4OVpwZ2hNeGFZb2xOTzNSbUJZYi80bEl4SnZkMG8rdkdDRDV4SmNmMDBTTEJ2c1E=
+
+
+mydatasourceConfig:
+  name: "datasource-config"
+  properties: |
+    spring.datasource.url=jdbc:sqlite:/app/dev.db
+    spring.datasource.driver-class-name=org.sqlite.JDBC
+    spring.datasource.username=
+    spring.datasource.password=
+
+
+frontendIngress:
+  name: app-ingress
+  enabled: true
+  ingressClassName: nginx
+  host: helm.yuvallab.xyz
+  tlsSecretName: app-tls-secret
+  serviceName: frontend-service
+  servicePort: 80
+  annotations:
+    corsAllowOrigin: "*"
+    corsAllowMethods: "GET, POST, PUT, DELETE, OPTIONS"
+    corsAllowHeaders: "Content-Type, Authorization"
+    corsAllowCredentials: "true"
+
+backendIngress:
+  name: app-ingress2
+  enabled: true
+  ingressClassName: nginx
+  host: helm.yuvallab.xyz
+  tlsSecretName: app-tls-secret
+  serviceName: backend-service
+  servicePort: 8081
+  path: /api(/|$)(.*)
+  pathType: ImplementationSpecific
+  annotations:
+    rewriteTarget: "/$2"
+    corsAllowOrigin: "*"
+    corsAllowMethods: "GET, POST, PUT, DELETE, OPTIONS"
+    corsAllowHeaders: "Content-Type, Authorization"
+    corsAllowCredentials: "true"
+
+backend:
+  name: backend-deployment
+  replicas: 1
+  appLabel: backend
+  containerName: backend-container
+  image: 253650698585.dkr.ecr.us-east-1.amazonaws.com/youval.mejerowicz-skillup-ecr:backend
+  containerPort: 8080
+  imagePullSecret: ecr-registry-secret
+  env:
+    jwtSecret:
+      secretName: jwt-secret
+      key: JWT_SECRET
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "250m"
+    limits:
+      memory: "256Mi"
+      cpu: "500m"
+  volumes:
+    datasourceConfig:
+      name: datasource-config-volume
+      mountPath: /app/application.properties
+      subPath: application.properties
+      configMapName: datasource-config
+    kubeConfig:
+      name: kube-config
+      configMapName: kube-config
+  service:
+    port: 8081
+    targetPort: 8080
+frontend:
+  image: "253650698585.dkr.ecr.us-east-1.amazonaws.com/youval.mejerowicz-skillup-ecr:frontend3"
+  replicas: 1
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "250m"
+    limits:
+      memory: "256Mi"
+      cpu: "500m"
+  service:
+    port: 80
+    targetPort: 80
+    nodePort: 30080
+
+namespace: "yuval-skillup"
+imagePullSecrets:
+  - name: ecr-registry-secret
+jwtSecretName: "jwt-secret"
+datasourceConfig:
+  name: "datasource-config"
